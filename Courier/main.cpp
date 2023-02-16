@@ -5,7 +5,7 @@
 #include <fstream>
 #include <deque>
 
-#include "function.h"
+#include "features.h"
 #include "struct.h"
 
 /**
@@ -15,41 +15,41 @@
 *			If params aren't complete, the program will show an information about lacking params</strong>
 * 
 *	@section Manual
-*	1) Pobierz plik "projekt" z mojego repozytorium na GitHub;\n
-*	2) Urochom wiersz poleceñ; \n
-*	3) Korzystaj¹c z polecenia 'cd' wejdŸ kolejno do plików "projekt", "x64", "Debug"; \n
-*	4) Nastêpnie uruchom program wpisuj¹c argumenty z podpunktu nr.5
-*	   (pamiêtaj ¿eby zamiast "input.txt" wpisaæ nazwê pliku z danymi. Natomiast output.txt mo¿esz zast¹piæ dowolnie nazwanym plikiem txt); \n
+*	1) Download all files from my repository on the GitHub;\n
+*	2) Launch command prompt; \n
+*	3) Use command 'cd' and go to files "projekt", "x64", "Debug"; \n
+*	4) Then type in arguments from point at the number 5.
+*	   (Remember that instead input.txt" type in data file name. ; \n
 *	5) projekt.exe -i input.txt -o output.txt; \n
-*	6) Podaj miasto w którym bêdzie centrala.
+*	6) Choose a city where should the central be.
 * 
 *   @author <strong>Karol Pitera</strong>
-*	@date <strong>03.02.2023</strong>
+*	@date <strong>16.02.2023</strong>
 */
 
 /**
-* @file main.cpp Plik zawieraj¹cy funkcje g³ówn¹.
+* @file main.cpp File with main feature.
 *  
 *
-* @param argc liczba podanych argumentów.
-* @param argv zawartoœæ parametrów.
+* @param argc number of typed arguments.
+* @param argv params contents.
 */
 
 int main(int argc, char* argv[]) {
 	std::string input;
 	std::string output;
  
-	obsluga_terminala(input, output, argc, argv);
+	service_cmd(input, output, argc, argv);
 
 	if (input.empty() || output.empty()) {
-		std::cout << "brak odpowiednich parametrow" << std::endl;
+		std::cout << "no parameters" << std::endl;
 		
 	}
 
 	else {
-		std::unordered_map <std::string, wierzcholek> miasta;  
-		std::vector <std::string> niedostepne; 
-		std::string centrala;
+		std::unordered_map <std::string, vertex> miasta;  
+		std::vector <std::string> unavailable; 
+		std::string central;
 
 		czytaj_plik(miasta, input);
 
@@ -64,12 +64,12 @@ int main(int argc, char* argv[]) {
 		bool istnieje = false;
 		do
 		{
-			std::cin >> centrala;
+			std::cin >> central;
 			std::cout << std::endl;
 		
 			for (const auto i : miasta) {
 
-				if (i.first == centrala) {
+				if (i.first == central) {
 					istnieje = true;
 				}
 			}	
@@ -77,10 +77,10 @@ int main(int argc, char* argv[]) {
 				std::cout << "Nie znaleziono takiego miasta, podaj poprawna nazwe: ";
 
 		} while (!istnieje);
-		miasta[centrala].odleglosc = 0;			
+		miasta[central].odleglosc = 0;			
 
-		Dijkstra(miasta, niedostepne);	
+		Dijkstra(miasta, unavailable);	
 
-		zapisz_trasy(miasta, centrala, niedostepne, output); 
+		zapisz_trasy(miasta, central, unavailable, output); 
 	}
 }

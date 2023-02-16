@@ -33,7 +33,7 @@ struct krawedz {
 * @param odwiedzony wartoœæ boolowska, informuj¹ca nas czy dany wierzcho³ek zosta³ odwiedzony.
 */
 
-struct wierzcholek {
+struct vertex {
 
 	std::string poprzedni;	
 	double odleglosc = max; 
