@@ -1,0 +1,11 @@
+Katowice -> Bytom -> Wroclaw: 195
+Katowice -> Lodz: 170
+Katowice -> Lodz -> Poznan -> Szczecin: 520
+Katowice -> Lodz -> Poznan: 300
+Katowice -> Lodz -> Poznan -> Szczecin -> Koszalin: 630
+Katowice -> Bytom: 15
+Katowice -> Gliwice: 40
+
+Miasta nie majace polaczenia z centrala: 
+- Warszawa
+- Gdansk
