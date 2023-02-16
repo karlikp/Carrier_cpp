@@ -36,7 +36,7 @@ struct krawedz {
 struct vertex {
 
 	std::string poprzedni;	
-	double odleglosc = max; 
+	double distance = max; 
 	std::vector <krawedz> sasiedzi;  
 	bool odwiedzony = false; 
 };

@@ -9,14 +9,14 @@
 #include "struct.h"
 
 /**
-*@file function.cpp Plik zawieraj¹cy kompletne funkcje (nag³ówek, oraz cia³o funkcji).
+*@file function.cpp complete features file (header, and feature body).
 * 
 */
 
 /**
-* Funkcja przypisuje do zmiennej input oraz output odpowiednie parametry.
+* Feature assign a poper params to variables input and output.
 * 
-* Odczytany parametr postaci "-i" informuje, ¿e kolejny argument ma byæ przypisany do "input",\n
+* Param "-i" inform the feature that the next argument will be assign , ¿e kolejny argument ma byæ przypisany do "input",\n
 * analogicznie z paremetrem "-o", oraz zmienn¹ "output".
 * 
 * @param input zmienna zawieraj¹ca nazwê pliku wejœciowego z danymi
@@ -46,7 +46,7 @@ void service_cmd(std::string & input, std::string& output, int argc, char* argv[
 *				które zawieraj¹ informacje o konkretnych miastach.
 * @param input zmienna zawieraj¹ca nazwe pliku z danymi wejœciowymi.
 */
-void czytaj_plik(std::unordered_map <std::string, vertex> & miasta, std::string input) {
+void read_data(std::unordered_map <std::string, vertex> & miasta, std::string input) {
 
 	std::ifstream plik(input);  
 	std::string m1, m2;
@@ -93,19 +93,19 @@ void Dijkstra(std::unordered_map <std::string, vertex> & miasta, std::vector <st
 		std::string obecny;
 
 		for (const auto i : miasta) {
-			if (i.second.odleglosc < min and !i.second.odwiedzony) { 
-				min = i.second.odleglosc;							
+			if (i.second.distance < min and !i.second.odwiedzony) { 
+				min = i.second.distance;							
 				obecny = i.first;			 
 			}
 		}									
 		
 		for (int j = 0; j < miasta[obecny].sasiedzi.size(); j++) {
 
-			double dystans = miasta[obecny].odleglosc + miasta[obecny].sasiedzi[j].waga;
+			double dystans = miasta[obecny].distance + miasta[obecny].sasiedzi[j].waga;
 			std::string sasiad = miasta[obecny].sasiedzi[j].koniec;
 
-			if (dystans < miasta[sasiad].odleglosc) {
-				miasta[sasiad].odleglosc = dystans;
+			if (dystans < miasta[sasiad].distance) {
+				miasta[sasiad].distance = dystans;
 				miasta[sasiad].poprzedni = obecny;
 			}												
 		}
@@ -135,14 +135,14 @@ void Dijkstra(std::unordered_map <std::string, vertex> & miasta, std::vector <st
 * @param niedostepne miasta, które nie maj¹ trasy ³¹cz¹cej z central¹.
 * @param output zmienna zawieraj¹ca nazwê pliku wyjœciowego z wynikiem dzia³ania programu.
 */
-void zapisz_trasy(std::unordered_map <std::string, vertex> miasta, std::string centrala,
+void typing_route(std::unordered_map <std::string, vertex> miasta, std::string centrala,
 				  std::vector <std::string>& niedostepne, std::string output) {
 
 	std::ofstream plik(output);
 
 	for (const auto i : miasta) {
 
-		if (i.second.odleglosc < max) { 
+		if (i.second.distance < max) { 
 
 			std::deque <std::string> kolejka;
 
@@ -162,7 +162,7 @@ void zapisz_trasy(std::unordered_map <std::string, vertex> miasta, std::string c
 					for (int j = 0; j < kolejka.size(); j++) {
 						plik << kolejka[j] << " -> ";
 					}
-					plik << i.first << ": " << i.second.odleglosc << std::endl;
+					plik << i.first << ": " << i.second.distance << std::endl;
 				}
 			}
 		}

@@ -47,40 +47,40 @@ int main(int argc, char* argv[]) {
 	}
 
 	else {
-		std::unordered_map <std::string, vertex> miasta;  
+		std::unordered_map <std::string, vertex> cities;  
 		std::vector <std::string> unavailable; 
 		std::string central;
 
-		czytaj_plik(miasta, input);
+		read_data(cities, input);
 
-		std::cout << "Program oblicza najkrotsza trase miedzy centrala a miastem do ktorego trzeba dostarczyc paczke" << std::endl << std::endl;
-		std::cout << "Dostepne miasta: " << std::endl;
+		std::cout << "The program calculate the shortest route between central and all different cities" << std::endl << std::endl;
+		std::cout << "Availble cities: " << std::endl;
 
-		for (const auto i : miasta) {			
+		for (const auto i : cities) {			
 			std::cout << "- " << i.first << std::endl;
 		}
 
-		std::cout << std::endl << "Wpisz nazwe miasta w ktorym ma znajdowac sie centrala: "; 
-		bool istnieje = false;
+		std::cout << std::endl << "Type city name where should the central be: "; 
+		bool exist = false;
 		do
 		{
 			std::cin >> central;
 			std::cout << std::endl;
 		
-			for (const auto i : miasta) {
+			for (const auto i : cities) {
 
 				if (i.first == central) {
-					istnieje = true;
+					exist = true;
 				}
 			}	
-		if (!istnieje)
-				std::cout << "Nie znaleziono takiego miasta, podaj poprawna nazwe: ";
+			if (!exist)
+				std::cout << "This city was not found, type in correct a city name: ";
 
-		} while (!istnieje);
-		miasta[central].odleglosc = 0;			
+		} while (!exist);
+		cities[central].distance = 0;			
 
-		Dijkstra(miasta, unavailable);	
+		Dijkstra(cities, unavailable);	
 
-		zapisz_trasy(miasta, central, unavailable, output); 
+		typing_route(cities, central, unavailable, output); 
 	}
 }
