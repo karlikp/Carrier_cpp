@@ -11,8 +11,8 @@
 /**
 *	\mainpage Introduction
 *   
-*			<strong>This program create route file from central city to all other cities. 
-*			If params aren't complete, the program will show an information about lacking params</strong>
+*			<strong>This program create route file from a centre city to all other cities. 
+*			If the params aren't complete, the program will show an information about lacking params</strong>
 * 
 *	@section Manual
 *	1) Download all files from my repository on the GitHub;\n
@@ -21,7 +21,7 @@
 *	4) Then type in arguments from point at the number 5.
 *	   (Remember that instead input.txt" type in data file name. ; \n
 *	5) projekt.exe -i input.txt -o output.txt; \n
-*	6) Choose a city where should the central be.
+*	6) Choose a city where should the centre be.
 * 
 *   @author <strong>Karol Pitera</strong>
 *	@date <strong>16.02.2023</strong>
@@ -49,27 +49,27 @@ int main(int argc, char* argv[]) {
 	else {
 		std::unordered_map <std::string, vertex> cities;  
 		std::vector <std::string> unavailable; 
-		std::string central;
+		std::string centre;
 
 		read_data(cities, input);
 
-		std::cout << "The program calculate the shortest route between central and all different cities" << std::endl << std::endl;
+		std::cout << "The program calculate the shortest route between centre and all different cities" << std::endl << std::endl;
 		std::cout << "Availble cities: " << std::endl;
 
 		for (const auto i : cities) {			
 			std::cout << "- " << i.first << std::endl;
 		}
 
-		std::cout << std::endl << "Type city name where should the central be: "; 
+		std::cout << std::endl << "Type city name where should the centre be: "; 
 		bool exist = false;
 		do
 		{
-			std::cin >> central;
+			std::cin >> centre;
 			std::cout << std::endl;
 		
 			for (const auto i : cities) {
 
-				if (i.first == central) {
+				if (i.first == centre) {
 					exist = true;
 				}
 			}	
@@ -77,10 +77,10 @@ int main(int argc, char* argv[]) {
 				std::cout << "This city was not found, type in correct a city name: ";
 
 		} while (!exist);
-		cities[central].distance = 0;			
+		cities[centre].distance = 0;			
 
 		Dijkstra(cities, unavailable);	
 
-		typing_route(cities, central, unavailable, output); 
+		typing_route(cities, centre, unavailable, output); 
 	}
 }

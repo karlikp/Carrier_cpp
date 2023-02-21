@@ -14,13 +14,13 @@
 */
 
 /**
-* Feature assign a poper params to variables input and output.
+* Feature assign a proper params to variables input and output.
 * 
-* Param "-i" inform the feature that the next argument will be assign , ¿e kolejny argument ma byæ przypisany do "input",\n
-* analogicznie z paremetrem "-o", oraz zmienn¹ "output".
+* Param "-i" inform the feature that a next argument will be assign to the variable "input".
+* The program will do similar with a param "-o", and the variable "output".
 * 
-* @param input zmienna zawieraj¹ca nazwê pliku wejœciowego z danymi
-* @param output zmienna zawieraj¹ca nazwê pliku wyjœciowego z wynikiem dzia³ania programu
+* @param input the variable includes a input file name with data
+* @param output the variable includes output file name with a program result 
 */
 
 void service_cmd(std::string & input, std::string& output, int argc, char* argv[]) {
@@ -36,46 +36,49 @@ void service_cmd(std::string & input, std::string& output, int argc, char* argv[
 }
 
 /**
-* Funkcja odczytuje dane z pliku i zapisuje je do konteneru asocjacyjnego (unordered_map).
+* Feature reads a data from a data file and writes it to the unordered map.
 * 
-* Dane najpierw zapisywanie s¹ do odpowiednich struktur.\n
-* Je¿eli te struktury nie istniej¹ to funkcja je tworzy.\n
-* Nastêpnie struktury przypisywane zostaj¹ do kontenera asocjacyjnego.
+* First, Data are saved to proper structures \n
+* If the structures don't exist then the feature creates them.\n
+* Second, Structures are saved to the unordered map.
 * 
-* @param miasta nieuporz¹dkowany kontener asocjacyjny, do niego zapisywane s¹ struktury,
-*				które zawieraj¹ informacje o konkretnych miastach.
-* @param input zmienna zawieraj¹ca nazwe pliku z danymi wejœciowymi.
+* @param miasta unordered map, include structures with a information about cities from the database
+* @param input the variable includes a file name with input data.
 */
 void read_data(std::unordered_map <std::string, vertex> & miasta, std::string input) {
 
 	std::ifstream plik(input);  
 	std::string m1, m2;
-	double odleg;
+	double dist;
 
 	if(plik) {						
 
 		while (not plik.eof())		
 		{
-			plik >> m1 >> m2 >> odleg;
-			miasta[m1].sasiedzi.push_back({odleg, m2});		
-			miasta[m2].sasiedzi.push_back({ odleg, m1 });	
+			plik >> m1 >> m2 >> dist;
+			miasta[m1].neighbour.push_back({dist, m2});		
+			miasta[m2].neighbour.push_back({ dist, m1 });	
 
 		}
 	}
 }
 /**
-* Funkcja realizuje algorytm Dijkstry.
+* The feature executes the Dijkstra algorithm
 *  
-*  Warto wiedzieæ, ¿e:
-*  - na pocz¹tku dzia³ania algorytmu centrala przyjmuje odleg³oœæ równ¹ zero,
-*  natomiast wszystkie inne miasta przyjmuj¹ odleg³oœæ pocz¹tkow¹ równ¹ maksymalnej wartoœci typu double;
-*  - domyœlnie ka¿de miasto ma przydzielon¹ wartoœæ boolowsk¹ równ¹ false w strukturze pod sk³adow¹ ("odwiedzony"),
-*  oznacza to ¿e nie zosta³o ono odwiedzone przez algorytm.\n\n
+*  Good to know, that at the beginning of the program:
+*  - The central variable is assigned the value zero.
+*	 Whereas all other cities is assigned the distance variable equal to a maximal posible value;
+*  - Every city includes a bool value equal to "false" in the structure variable called "visited",
+*	 (The value "false" means that given city hasn't been visited by algorithm .\n\n
 * 
-* Dzia³anie algorytmu:\n
+* The algorithm executuion:\n
 *
-* 1) Szukane jest najbli¿sze (wzglêdem centrali) nieodwiedzone miasto i zapisywane pod zmienn¹ ("obecny");\n
-* 2) Sprawdzana jest trasa od centrali przez miasto ("obecny") do wszystkich s¹siednich miast,
+* 1) The closest unvisited city (from center) is serached and saved to a variable called "current";\n
+* 
+* 2) The routes from center to all other cities are cheacked,
+*	If the distance are shorter than current saved way, the distance is overwritten and city from variable "current" are assigned to structure variable "previaus"
+
+Sprawdzana jest trasa od centrali przez miasto ("obecny") do wszystkich s¹siednich miast,
 *	 je¿eli odleg³oœæ oka¿e siê krótsza ni¿ ta, która jest zapisana do danego miasta wtedy 
 *	 odleg³oœæ jest nadpisywana, oraz do "poprzedni" (sk³adowej struktury miasta s¹siedniego) przypisywane jest miasto ("obecny");\n
 * 3) Odznaczamy miasto ("obecny") jako zbadane przez przypisanie jego sk³adowej ("odwiedzone")\n wartoœci = true;\n
@@ -93,27 +96,27 @@ void Dijkstra(std::unordered_map <std::string, vertex> & miasta, std::vector <st
 		std::string obecny;
 
 		for (const auto i : miasta) {
-			if (i.second.distance < min and !i.second.odwiedzony) { 
+			if (i.second.distance < min and !i.second.visited) { 
 				min = i.second.distance;							
 				obecny = i.first;			 
 			}
 		}									
 		
-		for (int j = 0; j < miasta[obecny].sasiedzi.size(); j++) {
+		for (int j = 0; j < miasta[obecny].neighbour.size(); j++) {
 
-			double dystans = miasta[obecny].distance + miasta[obecny].sasiedzi[j].waga;
-			std::string sasiad = miasta[obecny].sasiedzi[j].koniec;
+			double dystans = miasta[obecny].distance + miasta[obecny].neighbour[j].waga;
+			std::string sasiad = miasta[obecny].neighbour[j].koniec;
 
 			if (dystans < miasta[sasiad].distance) {
 				miasta[sasiad].distance = dystans;
-				miasta[sasiad].poprzedni = obecny;
+				miasta[sasiad].previous = obecny;
 			}												
 		}
-		miasta[obecny].odwiedzony = true;
+		miasta[obecny].visited = true;
 	}
 	
 		for(const auto i : miasta) {  
-			if (!i.second.odwiedzony) {
+			if (!i.second.visited) {
 				niedostepne.push_back(i.first); 
 			}
 		}
@@ -149,11 +152,11 @@ void typing_route(std::unordered_map <std::string, vertex> miasta, std::string c
 			if (i.first != centrala) { 
 
 				std::string wczesniej;
-				wczesniej = i.second.poprzedni;
+				wczesniej = i.second.previous;
 
 				while (wczesniej != centrala) {
 					kolejka.push_front(wczesniej); 
-					wczesniej = miasta[wczesniej].poprzedni;
+					wczesniej = miasta[wczesniej].previous;
 				}
 				if (plik) { 
 
