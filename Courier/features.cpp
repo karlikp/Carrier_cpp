@@ -42,10 +42,10 @@ void service_cmd(std::string & input, std::string& output, int argc, char* argv[
 * If the structures don't exist then the feature creates them.\n
 * Second, Structures are saved to the unordered map.
 * 
-* @param miasta unordered map, include structures with a information about cities from the database
+* @param cities unordered map, include structures with a information about cities from the database
 * @param input the variable includes a file name with input data.
 */
-void read_data(std::unordered_map <std::string, vertex> & miasta, std::string input) {
+void read_data(std::unordered_map <std::string, vertex> & cities, std::string input) {
 
 	std::ifstream plik(input);  
 	std::string m1, m2;
@@ -56,8 +56,8 @@ void read_data(std::unordered_map <std::string, vertex> & miasta, std::string in
 		while (not plik.eof())		
 		{
 			plik >> m1 >> m2 >> dist;
-			miasta[m1].neighbour.push_back({dist, m2});		
-			miasta[m2].neighbour.push_back({ dist, m1 });	
+			cities[m1].neighbors.push_back({dist, m2});		
+			cities[m2].neighbors.push_back({ dist, m1 });	
 
 		}
 	}
@@ -66,6 +66,7 @@ void read_data(std::unordered_map <std::string, vertex> & miasta, std::string in
 * The feature executes the Dijkstra algorithm
 *  
 *  Good to know, that at the beginning of the program:
+* 
 *  - The central variable is assigned the value zero.
 *	 Whereas all other cities is assigned the distance variable equal to a maximal posible value;
 *  - Every city includes a bool value equal to "false" in the structure variable called "visited",
@@ -74,108 +75,101 @@ void read_data(std::unordered_map <std::string, vertex> & miasta, std::string in
 * The algorithm executuion:\n
 *
 * 1) The closest unvisited city (from center) is serached and saved to a variable called "current";\n
-* 
 * 2) The routes from center to all other cities are cheacked,
-*	If the distance are shorter than current saved way, the distance is overwritten and city from variable "current" are assigned to structure variable "previaus"
-
-Sprawdzana jest trasa od centrali przez miasto ("obecny") do wszystkich s¹siednich miast,
-*	 je¿eli odleg³oœæ oka¿e siê krótsza ni¿ ta, która jest zapisana do danego miasta wtedy 
-*	 odleg³oœæ jest nadpisywana, oraz do "poprzedni" (sk³adowej struktury miasta s¹siedniego) przypisywane jest miasto ("obecny");\n
-* 3) Odznaczamy miasto ("obecny") jako zbadane przez przypisanie jego sk³adowej ("odwiedzone")\n wartoœci = true;\n
-* 4) Operacje od 1 do 3 wykonujemy tyle razy ile jest ró¿nych miast w kontenerze asocjacyjnym;\n
-* 5) Miasta które nie zosta³y odwiedzone zapisujemy w wektorze ("niedostepne").
+*	 If the distance are shorter than current saved way,
+*    the distance is overwritten and city from variable "current" are assigned to structure variable "previaus";\n
+* 3) Then city from the variable "current" is marked as visited, and value true is assigned to variable "visited" of structere given city;\n
+* 4) The points from 1 to 3 are executed as many time as there are saved a cities in the container (unordered_map);\n
+* 5) The unvisited cities are saved in the vector called "unavailable".
 * 
-* @param miasta nieuporz¹dkowany kontener asocjacyjny, do niego zapisywane s¹ struktury,
-*				które zawieraj¹ informacje o konkretnych miastach.
-* @param niedostepne miasta, które nie maj¹ trasy ³¹cz¹cej z central¹.
+* @param cities The unordered map, there are saved the cities structures, with information about a given cities. 
+* @param unavailable The cities, which haven't got any route connecting to the center.
 */
-void Dijkstra(std::unordered_map <std::string, vertex> & miasta, std::vector <std::string> & niedostepne) {
+void Dijkstra(std::unordered_map <std::string, vertex> & cities, std::vector <std::string> & unavailable) {
 	
-	for (int k = 0; k < miasta.size(); k++) {
+	for (int k = 0; k < cities.size(); k++) {
 		double min = max;
-		std::string obecny;
+		std::string current;
 
-		for (const auto i : miasta) {
+		for (const auto i : cities) {
 			if (i.second.distance < min and !i.second.visited) { 
 				min = i.second.distance;							
-				obecny = i.first;			 
+				current = i.first;			 
 			}
 		}									
 		
-		for (int j = 0; j < miasta[obecny].neighbour.size(); j++) {
+		for (int j = 0; j < cities[current].neighbors.size(); j++) {
 
-			double dystans = miasta[obecny].distance + miasta[obecny].neighbour[j].waga;
-			std::string sasiad = miasta[obecny].neighbour[j].koniec;
+			double current_way = cities[current].distance + cities[current].neighbors[j].range;
+			std::string neighbour = cities[current].neighbors[j].end;
 
-			if (dystans < miasta[sasiad].distance) {
-				miasta[sasiad].distance = dystans;
-				miasta[sasiad].previous = obecny;
+			if (current_way < cities[neighbour].distance) {
+				cities[neighbour].distance = current_way;
+				cities[neighbour].previous = current;
 			}												
 		}
-		miasta[obecny].visited = true;
+		cities[current].visited = true;
 	}
 	
-		for(const auto i : miasta) {  
+		for(const auto i : cities) {  
 			if (!i.second.visited) {
-				niedostepne.push_back(i.first); 
+				unavailable.push_back(i.first); 
 			}
 		}
 }
 /** 
-* Funkcja sortuje miasta i poprzedników oraz zapisuje podsumowane trasy do nowo utworzonego pliku. 
+* The feature sorts the cities and previous citis, then the feature saves the program result to the new create file. 
 * 
-* 1) Tworzona jest kolejka do której na pierwsz¹ pozycje zapisywane s¹ kolejne poprzednie miasta
-*	do momentu dojœcia do centrali (która nie jest zapisywana do kolejki);\n
-* 2) Do utworzonego pliku zapisywana jest trasa od centrali przez poprzedników do miasta,
-*   które w tej iteracji jest zapisane pod zmienn¹ 'i'.
-*	Po wypisanych miastach dopisywana jest podsumowana odleg³oœæ trasy;\n
-* 3) Punkty od 1 do 2 wykonujemy dla ka¿dego miasta w kontenerze asocjacyjnym;\n
-* 4) Do utworzonego pliku po krótkim opisie zapisywane s¹ wszystkie miasta, które nie maj¹ po³¹czenia z central¹;\n
-* 5) Plik zostaje zamkniêty.\n
+* 1) A queue is created, then next city and previous cities are saved to the first position the queue until the center is saved;\n
+* 2) Then, Route from the center, through previous cities and finished on the last city (saved in the variable "i"),
+*	 the distence information is saved in the end;\ 
+* 3) The points from 1 to 2 are performed for each city from the unordered map;\n
+* 4) All cities which haven't got conected with the center are saved type in to the file with a short information (about not connected);\n
+* 5) The file is closed.\n
 *
-* @param miasta nieuporz¹dkowany kontener asocjacyjny, który zawiera struktury przechowuj¹ce informacje o konkretnych miastach.
-* @param centrala miasto które zosta³o wyznaczone na centrale.
-* @param niedostepne miasta, które nie maj¹ trasy ³¹cz¹cej z central¹.
-* @param output zmienna zawieraj¹ca nazwê pliku wyjœciowego z wynikiem dzia³ania programu.
+* @param cities The unordered map, there are saved the cities structures, with information about a given cities.
+* @param center A city that chose as the center. 
+* @param unavailable The cities, which haven't got any route connecting to the center.
+* @param output the variable includes output file name with a program result 
 */
-void typing_route(std::unordered_map <std::string, vertex> miasta, std::string centrala,
-				  std::vector <std::string>& niedostepne, std::string output) {
+void typing_route(std::unordered_map <std::string, vertex> cities, std::string center,
+				  std::vector <std::string>& unavailable, std::string output) {
 
-	std::ofstream plik(output);
+	std::ofstream file(output);
 
-	for (const auto i : miasta) {
+	for (const auto i : cities) {
 
 		if (i.second.distance < max) { 
 
-			std::deque <std::string> kolejka;
+			std::deque <std::string> queue;
 
-			if (i.first != centrala) { 
+			if (i.first != center) { 
 
-				std::string wczesniej;
-				wczesniej = i.second.previous;
+				std::string last;
+				last = i.second.previous;
 
-				while (wczesniej != centrala) {
-					kolejka.push_front(wczesniej); 
-					wczesniej = miasta[wczesniej].previous;
+				while (last != center) {
+					queue.push_front(last); 
+					last = cities[last].previous;
 				}
-				if (plik) { 
+				if (file) { 
 
-					plik << centrala << " -> ";
+					file << center << " -> ";
 				
-					for (int j = 0; j < kolejka.size(); j++) {
-						plik << kolejka[j] << " -> ";
+					for (int j = 0; j < queue.size(); j++) {
+						file << queue[j] << " -> ";
 					}
-					plik << i.first << ": " << i.second.distance << std::endl;
+					file << i.first << ": " << i.second.distance << std::endl;
 				}
 			}
 		}
 	}
-	if (niedostepne.size() > 0) {
-		plik << std::endl << "Miasta nie majace polaczenia z centrala: " << std::endl;
+	if (unavailable.size() > 0) {
+		file << std::endl << "Cities without connecting to the center: " << std::endl;
 	
-		for (int i = 0; i < niedostepne.size(); i++) {
-			plik << "- " << niedostepne[i] << std::endl;	
+		for (int i = 0; i < unavailable.size(); i++) {
+			file << "- " << unavailable[i] << std::endl;	
 		}
 	}
-	plik.close();
+	file.close();
 }

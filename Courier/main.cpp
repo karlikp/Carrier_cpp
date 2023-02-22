@@ -20,7 +20,7 @@
 *	3) Use command 'cd' and go to files "projekt", "x64", "Debug"; \n
 *	4) Then type in arguments from point at the number 5.
 *	   (Remember that instead input.txt" type in data file name. ; \n
-*	5) projekt.exe -i input.txt -o output.txt; \n
+*	5) Courier.exe -i input.txt -o output.txt; \n
 *	6) Choose a city where should the centre be.
 * 
 *   @author <strong>Karol Pitera</strong>

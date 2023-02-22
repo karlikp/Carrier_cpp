@@ -6,37 +6,37 @@
 #include <unordered_map>
 
 /**
-* @file struct.h Plik zawieraj¹cy struktury oraz zmienn¹ globaln¹.
+* @file struct.h Structures file.
 * 
-* @param max wartoœæ odpowiadaj¹ca nieskoñczonoœci.
+* @param max The maximal value mean a infinity
 */
 const double max = std::numeric_limits<double>::max();
 
 
-/** Struktura przechowuje informacje o danym s¹siednim mieœcie.
+/** The scructure includes a information about a given neighbouring city.
 * 
-* @param waga odleg³oœæ pomiêdzy miastami (d³ugoœæ krawêdzi).
-* @param koniec s¹siednie miasto, czyli koniec krawêdzi.
+* @param range The distance between the cities.
+* @param end neighbouring city.
 */
 
-struct krawedz {			
-	double waga;			
-	std::string koniec;		
+struct edge {			
+	double range;			
+	std::string end;		
 };
 
 
-/** Struktura przechowuje informacje o danym mieœcie.
+/** The structure include a information about the given city.
 * 
-* @param poprzedni poprzednie miasto wyznaczone na podstawie algorytmu Dijkstry.
-* @param odleglosc odleg³oœæ od miasta pocz¹tkowego.
-* @param sasiedzi wektor struktur s¹siednich miast.
-* @param odwiedzony wartoœæ boolowska, informuj¹ca nas czy dany wierzcho³ek zosta³ odwiedzony.
+* @param previous The previous city that was chose by Dijkstra algorithm.
+* @param distance Dictance from the given city to the center.
+* @param neighbors Vector of nieghbouring cities stcrutures.
+* @param visited Bool value, that include the information about visiting the city.
 */
 
 struct vertex {
 
 	std::string previous;	
 	double distance = max; 
-	std::vector <krawedz> neighbour;  
+	std::vector <edge> neighbors;  
 	bool visited = false; 
 };

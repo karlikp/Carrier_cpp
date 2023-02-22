@@ -8,13 +8,13 @@
 
 #include "struct.h"
 /**
-* @file features.h Plik zawieraj¹cy nag³ówki funkcji.
+* @file features.h Header file.
 */
 void service_cmd(std::string& input, std::string& output, int argc, char* argv[]);
 
-void read_data(std::unordered_map <std::string, vertex> & miasta, std::string input);
+void read_data(std::unordered_map <std::string, vertex> & cities, std::string input);
 
-void Dijkstra(std::unordered_map <std::string, vertex> & miasta, std::vector <std::string> & niedostepne);
+void Dijkstra(std::unordered_map <std::string, vertex> & cities, std::vector <std::string> & unavailable);
 
-void typing_route(std::unordered_map <std::string, vertex> miasta, std::string centrala, std::vector <std::string>& niedostepne, 
+void typing_route(std::unordered_map <std::string, vertex> cities, std::string center, std::vector <std::string>& unavailable,
 				  std::string output);
