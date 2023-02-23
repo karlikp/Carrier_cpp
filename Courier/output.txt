@@ -1,0 +1,12 @@
+
+Cities without connecting to the center: 
+- Wroclaw
+- Lodz
+- Szczecin
+- Poznan
+- Koszalin
+- Katowice
+- Bytom
+- Gliwice
+- Warszawa
+- Gdansk

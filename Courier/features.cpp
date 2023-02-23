@@ -23,7 +23,7 @@
 * @param output the variable includes output file name with a program result 
 */
 
-void service_cmd(std::string & input, std::string& output, int argc, char* argv[]) {
+void service_cmd(std::string& input, std::string& output, std::string& centre, int argc, char* argv[]) {
 	for (int i = 0; argc > i; i++)
 	{
 		if (strcmp(argv[i], "-i") == 0) {
@@ -31,6 +31,9 @@ void service_cmd(std::string & input, std::string& output, int argc, char* argv[
 		}
 		if (strcmp(argv[i], "-o") == 0) {
 			output = argv[i + 1];
+		}
+		if (strcmp(argv[i], "-c") == 0) {
+			centre = argv[i + 1];
 		}
 	}	
 }
@@ -49,15 +52,15 @@ void read_data(std::unordered_map <std::string, vertex> & cities, std::string in
 
 	std::ifstream plik(input);  
 	std::string m1, m2;
-	double dist;
+	double distance;
 
 	if(plik) {						
 
 		while (not plik.eof())		
 		{
-			plik >> m1 >> m2 >> dist;
-			cities[m1].neighbors.push_back({dist, m2});		
-			cities[m2].neighbors.push_back({ dist, m1 });	
+			plik >> m1 >> m2 >> distance;
+			cities[m1].neighbors.push_back({distance, m2});		
+			cities[m2].neighbors.push_back({ distance, m1 });	
 
 		}
 	}
@@ -85,33 +88,36 @@ void read_data(std::unordered_map <std::string, vertex> & cities, std::string in
 * @param cities The unordered map, there are saved the cities structures, with information about a given cities. 
 * @param unavailable The cities, which haven't got any route connecting to the center.
 */
-void Dijkstra(std::unordered_map <std::string, vertex> & cities, std::vector <std::string> & unavailable) {
+void Dijkstra(std::unordered_map <std::string, vertex> & graph, std::string & centre, std::vector <std::string> & unavailable) {
+
+
+	graph[centre].distance = 0;
 	
-	for (int k = 0; k < cities.size(); k++) {
-		double min = max;
+	for (int k = 0; k < graph.size(); k++) {
+		double min = std::numeric_limits<double>::max();
 		std::string current;
 
-		for (const auto i : cities) {
+		for (const auto i : graph) {
 			if (i.second.distance < min and !i.second.visited) { 
 				min = i.second.distance;							
 				current = i.first;			 
 			}
 		}									
 		
-		for (int j = 0; j < cities[current].neighbors.size(); j++) {
+		for (int j = 0; j < graph[current].neighbors.size(); j++) {
 
-			double current_way = cities[current].distance + cities[current].neighbors[j].range;
-			std::string neighbour = cities[current].neighbors[j].end;
+			double current_way = graph[current].distance + graph[current].neighbors[j].range;
+			std::string neighbour = graph[current].neighbors[j].end;
 
-			if (current_way < cities[neighbour].distance) {
-				cities[neighbour].distance = current_way;
-				cities[neighbour].previous = current;
+			if (current_way < graph[neighbour].distance) {
+				graph[neighbour].distance = current_way;
+				graph[neighbour].previous = current;
 			}												
 		}
-		cities[current].visited = true;
+		graph[current].visited = true;
 	}
 	
-		for(const auto i : cities) {  
+		for(const auto i : graph) {  
 			if (!i.second.visited) {
 				unavailable.push_back(i.first); 
 			}
@@ -132,14 +138,14 @@ void Dijkstra(std::unordered_map <std::string, vertex> & cities, std::vector <st
 * @param unavailable The cities, which haven't got any route connecting to the center.
 * @param output the variable includes output file name with a program result 
 */
-void typing_route(std::unordered_map <std::string, vertex> cities, std::string center,
+void typing_route(std::unordered_map <std::string, vertex> graph, std::string center,
 				  std::vector <std::string>& unavailable, std::string output) {
 
 	std::ofstream file(output);
 
-	for (const auto i : cities) {
+	for (const auto i : graph) {
 
-		if (i.second.distance < max) { 
+		if (i.second.distance < std::numeric_limits<double>::max()) { 
 
 			std::deque <std::string> queue;
 
@@ -150,7 +156,7 @@ void typing_route(std::unordered_map <std::string, vertex> cities, std::string c
 
 				while (last != center) {
 					queue.push_front(last); 
-					last = cities[last].previous;
+					last = graph[last].previous;
 				}
 				if (file) { 
 

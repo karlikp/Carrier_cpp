@@ -1,11 +1,12 @@
-Koszalin -> Szczecin -> Poznan -> Bytom -> Wroclaw: 810
-Koszalin -> Szczecin -> Poznan -> Lodz: 460
-Koszalin -> Szczecin: 110
-Koszalin -> Szczecin -> Poznan: 330
-Koszalin -> Szczecin -> Poznan -> Lodz -> Katowice: 630
-Koszalin -> Szczecin -> Poznan -> Bytom: 630
-Koszalin -> Szczecin -> Poznan -> Lodz -> Katowice -> Gliwice: 670
 
 Cities without connecting to the center: 
+- Wroclaw
+- Lodz
+- Szczecin
+- Poznan
+- Koszalin
+- Katowice
+- Bytom
+- Gliwice
 - Warszawa
 - Gdansk

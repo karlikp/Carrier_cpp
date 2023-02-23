@@ -36,10 +36,11 @@
 */
 
 int main(int argc, char* argv[]) {
-	std::string input;
-	std::string output;
+	std::string input, output, centre;
  
-	service_cmd(input, output, argc, argv);
+	service_cmd(input, output, centre, argc, argv);
+	
+	std::cout << centre;
 
 	if (input.empty() || output.empty()) {
 		std::cout << "no parameters" << std::endl;
@@ -47,13 +48,13 @@ int main(int argc, char* argv[]) {
 	}
 
 	else {
-		std::unordered_map <std::string, vertex> cities;  
+		std::unordered_map <std::string, vertex> graph;  
 		std::vector <std::string> unavailable; 
 		std::string centre;
 
-		read_data(cities, input);
+		read_data(graph, input);
 
-		std::cout << "The program calculate the shortest route between centre and all different cities" << std::endl << std::endl;
+	/*	std::cout << "The program calculate the shortest route between centre and all different cities" << std::endl << std::endl;
 		std::cout << "Availble cities: " << std::endl;
 
 		for (const auto i : cities) {			
@@ -77,10 +78,11 @@ int main(int argc, char* argv[]) {
 				std::cout << "This city was not found, type in correct a city name: ";
 
 		} while (!exist);
-		cities[centre].distance = 0;			
+		graph[centre].distance = 0;	
+		*/
 
-		Dijkstra(cities, unavailable);	
+		Dijkstra(graph, centre, unavailable);	
 
-		typing_route(cities, centre, unavailable, output); 
+		typing_route(graph, centre, unavailable, output); 
 	}
 }

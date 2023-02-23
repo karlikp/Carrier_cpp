@@ -7,10 +7,7 @@
 
 /**
 * @file struct.h Structures file.
-* 
-* @param max The maximal value mean a infinity
 */
-const double max = std::numeric_limits<double>::max();
 
 
 /** The scructure includes a information about a given neighbouring city.
@@ -35,8 +32,8 @@ struct edge {
 
 struct vertex {
 
-	std::string previous;	
-	double distance = max; 
+	double distance = std::numeric_limits<double>::max();
+	std::string previous; ;
 	std::vector <edge> neighbors;  
 	bool visited = false; 
 };
