@@ -1,0 +1,73 @@
+\begin{theindex}
+
+  \item {Dijkstra}
+    \subitem {features.h}, \hyperpage{13}
+  \item {distance}
+    \subitem {vertex}, \hyperpage{8}
+
+  \indexspace
+
+  \item {edge}, \hyperpage{7}
+    \subitem {end}, \hyperpage{7}
+    \subitem {range}, \hyperpage{7}
+  \item {end}
+    \subitem {edge}, \hyperpage{7}
+
+  \indexspace
+
+  \item {features.cpp}, \hyperpage{11}
+  \item {features.h}, \hyperpage{13}, \hyperpage{15}
+    \subitem {Dijkstra}, \hyperpage{13}
+    \subitem {read\_data}, \hyperpage{14}
+    \subitem {service\_cmd}, \hyperpage{14}
+    \subitem {typing\_route}, \hyperpage{14}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.cpp}, \hyperpage{16}
+  \item {main.cpp}, \hyperpage{15, 16}
+    \subitem {main}, \hyperpage{16}
+  \item {max}
+    \subitem {struct.h}, \hyperpage{18}
+
+  \indexspace
+
+  \item {neighbors}
+    \subitem {vertex}, \hyperpage{8}
+
+  \indexspace
+
+  \item {previous}
+    \subitem {vertex}, \hyperpage{9}
+
+  \indexspace
+
+  \item {range}
+    \subitem {edge}, \hyperpage{7}
+  \item {read\_data}
+    \subitem {features.h}, \hyperpage{14}
+
+  \indexspace
+
+  \item {service\_cmd}
+    \subitem {features.h}, \hyperpage{14}
+  \item {struct.h}, \hyperpage{17, 18}
+    \subitem {max}, \hyperpage{18}
+
+  \indexspace
+
+  \item {typing\_route}
+    \subitem {features.h}, \hyperpage{14}
+
+  \indexspace
+
+  \item {vertex}, \hyperpage{8}
+    \subitem {distance}, \hyperpage{8}
+    \subitem {neighbors}, \hyperpage{8}
+    \subitem {previous}, \hyperpage{9}
+    \subitem {visited}, \hyperpage{9}
+  \item {visited}
+    \subitem {vertex}, \hyperpage{9}
+
+\end{theindex}

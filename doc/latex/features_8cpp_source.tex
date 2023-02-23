@@ -1,0 +1,118 @@
+\hypertarget{features_8cpp_source}{}\doxysection{features.\+cpp}
+\label{features_8cpp_source}\index{features.cpp@{features.cpp}}
+\mbox{\hyperlink{features_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <cmath>}\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <deque>}}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{features_8h}{features.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{struct_8h}{struct.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00026}\mbox{\hyperlink{features_8cpp_aea37dcd9b14ed94e11c268b0e1b3a9ab}{00026}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{features_8cpp_aea37dcd9b14ed94e11c268b0e1b3a9ab}{service\_cmd}}(std::string\ \&\ input,\ std::string\&\ output,\ \textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \{}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ argc\ >\ i;\ i++)}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00028}00028\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(argv[i],\ \textcolor{stringliteral}{"{}-\/i"{}})\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ input\ =\ argv[i\ +\ 1];}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(argv[i],\ \textcolor{stringliteral}{"{}-\/o"{}})\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ output\ =\ argv[i\ +\ 1];}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00035}00035\ \ \ \ \ \}\ \ \ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00036}00036\ \}}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00048}\mbox{\hyperlink{features_8cpp_a1bcf93ef20eb0314db1a888f324b60c3}{00048}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{features_8cpp_a1bcf93ef20eb0314db1a888f324b60c3}{read\_data}}(std::unordered\_map\ <std::string,\ vertex>\ \&\ cities,\ std::string\ input)\ \{}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00050}00050\ \ \ \ \ std::ifstream\ plik(input);\ \ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00051}00051\ \ \ \ \ std::string\ m1,\ m2;}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordtype}{double}\ dist;}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{if}(plik)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (not\ plik.eof())\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ plik\ >>\ m1\ >>\ m2\ >>\ dist;}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ cities[m1].neighbors.push\_back(\{dist,\ m2\});\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ cities[m2].neighbors.push\_back(\{\ dist,\ m1\ \});\ \ \ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00063}00063\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00064}00064\ \}}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00088}\mbox{\hyperlink{features_8cpp_a6ecbb046af671a80e7269ee7a8ce931b}{00088}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{features_8cpp_a6ecbb046af671a80e7269ee7a8ce931b}{Dijkstra}}(std::unordered\_map\ <std::string,\ vertex>\ \&\ cities,\ std::vector\ <std::string>\ \&\ unavailable)\ \{}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00089}00089\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ cities.size();\ k++)\ \{}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ min\ =\ \mbox{\hyperlink{struct_8h_aff3813d1ff60bcd72ba11fb031b4b4c8}{max}};}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ std::string\ current;}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ i\ :\ cities)\ \{}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i.second.distance\ <\ min\ and\ !i.second.visited)\ \{\ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ min\ =\ i.second.distance;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ current\ =\ i.first;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ cities[current].neighbors.size();\ j++)\ \{}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ current\_way\ =\ cities[current].distance\ +\ cities[current].neighbors[j].range;}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ neighbour\ =\ cities[current].neighbors[j].end;}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (current\_way\ <\ cities[neighbour].distance)\ \{}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cities[neighbour].distance\ =\ current\_way;}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cities[neighbour].previous\ =\ current;}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ cities[current].visited\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00112}00112\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00113}00113\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ i\ :\ cities)\ \{\ \ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!i.second.visited)\ \{}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ unavailable.push\_back(i.first);\ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00119}00119\ \}}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00135}\mbox{\hyperlink{features_8cpp_a9397a43c038cf5c0450b0fd73f01af63}{00135}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{features_8cpp_a9397a43c038cf5c0450b0fd73f01af63}{typing\_route}}(std::unordered\_map\ <std::string,\ vertex>\ cities,\ std::string\ center,}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector\ <std::string>\&\ unavailable,\ std::string\ output)\ \{}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00138}00138\ \ \ \ \ std::ofstream\ file(output);}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00140}00140\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ i\ :\ cities)\ \{}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i.second.distance\ <\ \mbox{\hyperlink{struct_8h_aff3813d1ff60bcd72ba11fb031b4b4c8}{max}})\ \{\ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ std::deque\ <std::string>\ queue;}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i.first\ !=\ center)\ \{\ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ last;}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ last\ =\ i.second.previous;}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (last\ !=\ center)\ \{}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ queue.push\_front(last);\ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ last\ =\ cities[last].previous;}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (file)\ \{\ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ center\ <<\ \textcolor{stringliteral}{"{}\ -\/>\ "{}};}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ queue.size();\ j++)\ \{}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ queue[j]\ <<\ \textcolor{stringliteral}{"{}\ -\/>\ "{}};}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ i.first\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ i.second.distance\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00166}00166\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00167}00167\ \ \ \ \ \textcolor{keywordflow}{if}\ (unavailable.size()\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ file\ <<\ std::endl\ <<\ \textcolor{stringliteral}{"{}Cities\ without\ connecting\ to\ the\ center:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00169}00169\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ unavailable.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ \textcolor{stringliteral}{"{}-\/\ "{}}\ <<\ unavailable[i]\ <<\ std::endl;\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00173}00173\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00174}00174\ \ \ \ \ file.close();}
+\DoxyCodeLine{\Hypertarget{features_8cpp_source_l00175}00175\ \}}
+
+\end{DoxyCode}

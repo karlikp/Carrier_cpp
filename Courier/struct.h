@@ -16,7 +16,7 @@ const double max = std::numeric_limits<double>::max();
 /** The scructure includes a information about a given neighbouring city.
 * 
 * @param range The distance between the cities.
-* @param end neighbouring city.
+* @param end Neighbouring city.
 */
 
 struct edge {			
@@ -27,7 +27,7 @@ struct edge {
 
 /** The structure include a information about the given city.
 * 
-* @param previous The previous city that was chose by Dijkstra algorithm.
+* @param previous The earlier city that was determined by the algorithm
 * @param distance Dictance from the given city to the center.
 * @param neighbors Vector of nieghbouring cities stcrutures.
 * @param visited Bool value, that include the information about visiting the city.

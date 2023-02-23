@@ -11,20 +11,20 @@
 /**
 *	\mainpage Introduction
 *   
-*			<strong>This program create route file from a centre city to all other cities. 
-*			If the params aren't complete, the program will show an information about lacking params</strong>
+*	<strong>This program create route file from a central city to all other cities. 
+	If the params aren't complete, the program will show an information about lacking params</strong>
 * 
 *	@section Manual
-*	1) Download all files from my repository on the GitHub;\n
+*	1) Download all files from my repository called Courier_cpp on the GitHub;\n
 *	2) Launch command prompt; \n
-*	3) Use command 'cd' and go to files "projekt", "x64", "Debug"; \n
+*	3) Use command 'cd' and go to files "Courier_cpp",  "Courier", "x64", "Debug"; \n
 *	4) Then type in arguments from point at the number 5.
-*	   (Remember that instead input.txt" type in data file name. ; \n
+*	   (Remember that instead input.txt" type in data file name; \n
 *	5) Courier.exe -i input.txt -o output.txt; \n
 *	6) Choose a city where should the centre be.
 * 
 *   @author <strong>Karol Pitera</strong>
-*	@date <strong>16.02.2023</strong>
+*	@date <strong>23.02.2023</strong>
 */
 
 /**

@@ -9,7 +9,7 @@
 #include "struct.h"
 
 /**
-*@file function.cpp complete features file (header, and feature body).
+*@file features.cpp complete features file (header, and feature body).
 * 
 */
 
@@ -67,7 +67,7 @@ void read_data(std::unordered_map <std::string, vertex> & cities, std::string in
 *  
 *  Good to know, that at the beginning of the program:
 * 
-*  - The central variable is assigned the value zero.
+*  - The city which was choosen the center is assigned the value zero.
 *	 Whereas all other cities is assigned the distance variable equal to a maximal posible value;
 *  - Every city includes a bool value equal to "false" in the structure variable called "visited",
 *	 (The value "false" means that given city hasn't been visited by algorithm .\n\n
