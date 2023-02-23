@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Courier.cpp: features.h File Reference</title>
+<title>Courier.cpp: C:/Users/Ryzen/Desktop/Projekty/Courier_cpp/Courier/features.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
   <td id="projectalign">
    <div id="projectname">Courier.cpp<span id="projectnumber">&#160;The most recent version</span>
    </div>
-   <div id="projectbrief">The program searches routes from company center to all different cities a given  database</div>
+   <div id="projectbrief">The program used Dijkstra Algorithm to searched the sortest routes from company centre to all different cities from database</div>
   </td>
  </tr>
  </tbody>
@@ -89,37 +89,29 @@ $(function() {
 <code>#include &lt;unordered_map&gt;</code><br />
 <code>#include &lt;fstream&gt;</code><br />
 <code>#include &quot;<a class="el" href="struct_8h_source.html">struct.h</a>&quot;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for features.h:</div>
-<div class="dyncontent">
-<div class="center"><img src="features_8h__incl.png" border="0" usemap="#afeatures_8h" alt=""/></div>
-</div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><img src="features_8h__dep__incl.png" border="0" usemap="#afeatures_8hdep" alt=""/></div>
-</div>
 </div>
 <p><a href="features_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aea37dcd9b14ed94e11c268b0e1b3a9ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="features_8h.html#aea37dcd9b14ed94e11c268b0e1b3a9ab">service_cmd</a> (std::string &amp;input, std::string &amp;output, int argc, char *argv[])</td></tr>
-<tr class="memdesc:aea37dcd9b14ed94e11c268b0e1b3a9ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Feature assign a proper params to variables input and output.  <br /></td></tr>
-<tr class="separator:aea37dcd9b14ed94e11c268b0e1b3a9ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1bcf93ef20eb0314db1a888f324b60c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="features_8h.html#a1bcf93ef20eb0314db1a888f324b60c3">read_data</a> (std::unordered_map&lt; std::string, <a class="el" href="structvertex.html">vertex</a> &gt; &amp;cities, std::string input)</td></tr>
-<tr class="memdesc:a1bcf93ef20eb0314db1a888f324b60c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Feature reads a data from a data file and writes it to the unordered map.  <br /></td></tr>
-<tr class="separator:a1bcf93ef20eb0314db1a888f324b60c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ecbb046af671a80e7269ee7a8ce931b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="features_8h.html#a6ecbb046af671a80e7269ee7a8ce931b">Dijkstra</a> (std::unordered_map&lt; std::string, <a class="el" href="structvertex.html">vertex</a> &gt; &amp;cities, std::vector&lt; std::string &gt; &amp;unavailable)</td></tr>
-<tr class="memdesc:a6ecbb046af671a80e7269ee7a8ce931b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The feature executes the Dijkstra algorithm.  <br /></td></tr>
-<tr class="separator:a6ecbb046af671a80e7269ee7a8ce931b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9397a43c038cf5c0450b0fd73f01af63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="features_8h.html#a9397a43c038cf5c0450b0fd73f01af63">typing_route</a> (std::unordered_map&lt; std::string, <a class="el" href="structvertex.html">vertex</a> &gt; cities, std::string center, std::vector&lt; std::string &gt; &amp;unavailable, std::string output)</td></tr>
-<tr class="memdesc:a9397a43c038cf5c0450b0fd73f01af63"><td class="mdescLeft">&#160;</td><td class="mdescRight">The feature sorts the cities and previous citis, then the feature saves the program result to the new create file.  <br /></td></tr>
-<tr class="separator:a9397a43c038cf5c0450b0fd73f01af63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7fdb82a8f70ee7468130b9907c53a4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="features_8h.html#ae7fdb82a8f70ee7468130b9907c53a4b">service_cmd</a> (std::string &amp;input, std::string &amp;output, std::string &amp;centre, int argc, char *argv[])</td></tr>
+<tr class="memdesc:ae7fdb82a8f70ee7468130b9907c53a4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Feature assign a proper params to variables input, output and centre.  <br /></td></tr>
+<tr class="separator:ae7fdb82a8f70ee7468130b9907c53a4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c337ae08df4b23ce767ca3bf1de4f3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="features_8h.html#a7c337ae08df4b23ce767ca3bf1de4f3e">read_data</a> (std::unordered_map&lt; std::string, <a class="el" href="structvertex.html">vertex</a> &gt; &amp;graph, std::string input)</td></tr>
+<tr class="memdesc:a7c337ae08df4b23ce767ca3bf1de4f3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Feature reads a information from a data file and save the data to the map.  <br /></td></tr>
+<tr class="separator:a7c337ae08df4b23ce767ca3bf1de4f3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae70f8182962bc5aaaede8631ff9f0470"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="features_8h.html#ae70f8182962bc5aaaede8631ff9f0470">Dijkstra</a> (std::unordered_map&lt; std::string, <a class="el" href="structvertex.html">vertex</a> &gt; &amp;graph, std::string &amp;centre, std::vector&lt; std::string &gt; &amp;unavailable)</td></tr>
+<tr class="memdesc:ae70f8182962bc5aaaede8631ff9f0470"><td class="mdescLeft">&#160;</td><td class="mdescRight">The feature searches the shortest routes from the central city to all different cities.  <br /></td></tr>
+<tr class="separator:ae70f8182962bc5aaaede8631ff9f0470"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4a8a6a7fb0f96ffa317bfcd154ce7cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="features_8h.html#ab4a8a6a7fb0f96ffa317bfcd154ce7cc">typing_result</a> (std::unordered_map&lt; std::string, <a class="el" href="structvertex.html">vertex</a> &gt; graph, std::string center, std::vector&lt; std::string &gt; &amp;unavailable, std::string output)</td></tr>
+<tr class="memdesc:ab4a8a6a7fb0f96ffa317bfcd154ce7cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The feature sorts the cities and previous citis, and saves the program result to the new create file.  <br /></td></tr>
+<tr class="separator:ab4a8a6a7fb0f96ffa317bfcd154ce7cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a6ecbb046af671a80e7269ee7a8ce931b" name="a6ecbb046af671a80e7269ee7a8ce931b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ecbb046af671a80e7269ee7a8ce931b">&#9670;&#160;</a></span>Dijkstra()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Header file. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="ae70f8182962bc5aaaede8631ff9f0470" name="ae70f8182962bc5aaaede8631ff9f0470"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae70f8182962bc5aaaede8631ff9f0470">&#9670;&#160;</a></span>Dijkstra()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -128,7 +120,13 @@ Functions</h2></td></tr>
           <td class="memname">void Dijkstra </td>
           <td>(</td>
           <td class="paramtype">std::unordered_map&lt; std::string, <a class="el" href="structvertex.html">vertex</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>cities</em>, </td>
+          <td class="paramname"><em>graph</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>centre</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -143,32 +141,20 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Good to know, that at the beginning of the program:</p>
-<ul>
-<li>The city which was choosen the center is assigned the value zero. Whereas all other cities is assigned the distance variable equal to a maximal posible value;</li>
-<li>Every city includes a bool value equal to "false" in the structure variable called "visited", (The value "false" means that given city hasn't been visited by algorithm .<br  />
-<br  />
- The algorithm executuion:<br  />
- 1) The closest unvisited city (from center) is serached and saved to a variable called "current";<br  />
-2) The routes from center to all other cities are cheacked, If the distance are shorter than current saved way, the distance is overwritten and city from variable "current" are assigned to structure variable "previaus";<br  />
-3) Then city from the variable "current" is marked as visited, and value true is assigned to variable "visited" of structere given city;<br  />
-4) The points from 1 to 3 are executed as many time as there are saved a cities in the container (unordered_map);<br  />
-5) The unvisited cities are saved in the vector called "unavailable".</li>
-</ul>
+
+<p>The feature searches the shortest routes from the central city to all different cities. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">cities</td><td>The unordered map, there are saved the cities structures, with information about a given cities. </td></tr>
+    <tr><td class="paramname">graph</td><td>unordered map, which is indexed with city names. </td></tr>
     <tr><td class="paramname">unavailable</td><td>The cities, which haven't got any route connecting to the center. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="features_8cpp_source.html#l00088">88</a> of file <a class="el" href="features_8cpp_source.html">features.cpp</a>.</p>
-
 </div>
 </div>
-<a id="a1bcf93ef20eb0314db1a888f324b60c3" name="a1bcf93ef20eb0314db1a888f324b60c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1bcf93ef20eb0314db1a888f324b60c3">&#9670;&#160;</a></span>read_data()</h2>
+<a id="a7c337ae08df4b23ce767ca3bf1de4f3e" name="a7c337ae08df4b23ce767ca3bf1de4f3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c337ae08df4b23ce767ca3bf1de4f3e">&#9670;&#160;</a></span>read_data()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -177,7 +163,7 @@ Functions</h2></td></tr>
           <td class="memname">void read_data </td>
           <td>(</td>
           <td class="paramtype">std::unordered_map&lt; std::string, <a class="el" href="structvertex.html">vertex</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>cities</em>, </td>
+          <td class="paramname"><em>graph</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -192,23 +178,21 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>First, Data are saved to proper structures <br  />
-If the structures don't exist then the feature creates them.<br  />
-Second, Structures are saved to the unordered map.</p>
+
+<p>Feature reads a information from a data file and save the data to the map. </p>
+<p>The map includes structures with information about cities.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">cities</td><td>unordered map, include structures with a information about cities from the database </td></tr>
+    <tr><td class="paramname">graph</td><td>unordered map, which is indexed with city names. </td></tr>
     <tr><td class="paramname">input</td><td>the variable includes a file name with input data. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="features_8cpp_source.html#l00048">48</a> of file <a class="el" href="features_8cpp_source.html">features.cpp</a>.</p>
-
 </div>
 </div>
-<a id="aea37dcd9b14ed94e11c268b0e1b3a9ab" name="aea37dcd9b14ed94e11c268b0e1b3a9ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea37dcd9b14ed94e11c268b0e1b3a9ab">&#9670;&#160;</a></span>service_cmd()</h2>
+<a id="ae7fdb82a8f70ee7468130b9907c53a4b" name="ae7fdb82a8f70ee7468130b9907c53a4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7fdb82a8f70ee7468130b9907c53a4b">&#9670;&#160;</a></span>service_cmd()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -224,6 +208,12 @@ Second, Structures are saved to the unordered map.</p>
           <td></td>
           <td class="paramtype">std::string &amp;&#160;</td>
           <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>centre</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -244,30 +234,30 @@ Second, Structures are saved to the unordered map.</p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Param "-i" inform the feature that a next argument will be assign to the variable "input". The program will do similar with a param "-o", and the variable "output".</p>
+
+<p>Feature assign a proper params to variables input, output and centre. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">input</td><td>the variable includes a input file name with data </td></tr>
     <tr><td class="paramname">output</td><td>the variable includes output file name with a program result </td></tr>
+    <tr><td class="paramname">centre</td><td>The varaible includes name of central city </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="features_8cpp_source.html#l00026">26</a> of file <a class="el" href="features_8cpp_source.html">features.cpp</a>.</p>
-
 </div>
 </div>
-<a id="a9397a43c038cf5c0450b0fd73f01af63" name="a9397a43c038cf5c0450b0fd73f01af63"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9397a43c038cf5c0450b0fd73f01af63">&#9670;&#160;</a></span>typing_route()</h2>
+<a id="ab4a8a6a7fb0f96ffa317bfcd154ce7cc" name="ab4a8a6a7fb0f96ffa317bfcd154ce7cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4a8a6a7fb0f96ffa317bfcd154ce7cc">&#9670;&#160;</a></span>typing_result()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void typing_route </td>
+          <td class="memname">void typing_result </td>
           <td>(</td>
           <td class="paramtype">std::unordered_map&lt; std::string, <a class="el" href="structvertex.html">vertex</a> &gt;&#160;</td>
-          <td class="paramname"><em>cities</em>, </td>
+          <td class="paramname"><em>graph</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -294,21 +284,18 @@ Second, Structures are saved to the unordered map.</p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>1) A queue is created, then next city and previous cities are saved to the first position the queue until the center is saved;<br  />
-2) Then, Route from the center, through previous cities and finished on the last city (saved in the variable "i"), the distence information is saved in the end;\ 3) The points from 1 to 2 are performed for each city from the unordered map;<br  />
-4) All cities which haven't got conected with the center are saved type in to the file with a short information (about not connected);<br  />
-5) The file is closed.<br  />
- </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>The feature sorts the cities and previous citis, and saves the program result to the new create file. </p>
+<p>When the function finished sort, then all cities visited in one route are typed in the right order with finish distance.</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">cities</td><td>The unordered map, there are saved the cities structures, with information about a given cities. </td></tr>
-    <tr><td class="paramname">center</td><td>A city that chose as the center. </td></tr>
+    <tr><td class="paramname">graph</td><td>unordered map, which is indexed with city names. </td></tr>
+    <tr><td class="paramname">centre</td><td>The varaible includes name of central city </td></tr>
     <tr><td class="paramname">unavailable</td><td>The cities, which haven't got any route connecting to the center. </td></tr>
     <tr><td class="paramname">output</td><td>the variable includes output file name with a program result </td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="features_8cpp_source.html#l00135">135</a> of file <a class="el" href="features_8cpp_source.html">features.cpp</a>.</p>
 
 </div>
 </div>

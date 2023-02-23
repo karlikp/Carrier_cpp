@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.2.2)  23 FEB 2023 09:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.2.2)  23 FEB 2023 18:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -889,7 +889,9 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 8.99994pt on input line 175.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 6.29996pt on input line 175.
- [1] [2]
+ [1] [2
+
+]
 Package hyperref Info: Option `pageanchor' set `true' on input line 178.
 
 Chapter 1.
@@ -906,15 +908,13 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 22.39185pt on input line 180.
 (index.tex
-LaTeX Font Info:    Trying to load font information for TS1+phv on input line 1
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 12.9599pt on input line 1.
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 4
 .
  (D:\Programy\MiKTEX\tex/latex/psnfss\ts1phv.fd
 File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
 )
-LaTeX Font Info:    Font shape `TS1/phv/b/n' will be
-(Font)              scaled to size 8.99994pt on input line 1.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 12.9599pt on input line 1.
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
 (Font)              scaled to size 8.99994pt on input line 4.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
@@ -930,7 +930,6 @@ Underfull \hbox (badness 10000) detected at line 12
  []
 
 ) [1
-
 
 ] [2
 
@@ -952,79 +951,94 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 10.79993pt on input line 12.
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 40.
- [7])
-(structvertex.tex [8]) [9] [10
-
-]
+)
+(structvertex.tex [7]) [8]
 Chapter 5.
-(features_8cpp.tex) (features_8cpp_source.tex [11]) (features_8h.tex [12]
+(features_8cpp.tex
+Underfull \hbox (badness 10000) in paragraph at lines 8--16
+
+ []
+
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.09995pt on input line 22.
+(Font)              scaled to size 8.09995pt on input line 20.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 22.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 20.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.09995pt on input line 22.
+(Font)              scaled to size 8.09995pt on input line 20.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 7.19995pt on input line 39.
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 36.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 39.
+[9
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--51
-
- []
-
-[13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 110--114
+] [10]) (features_8h.tex
+Underfull \hbox (badness 10000) in paragraph at lines 8--14
 
  []
 
-) (features_8h_source.tex) (main_8cpp.tex [15]) (main_8cpp_source.tex [16])
-(struct_8h.tex [17]) (struct_8h_source.tex) [18] (refman.ind [19
+[11] [12]) (features_8h_source.tex [13]) (main_8cpp.tex
+Underfull \hbox (badness 10000) in paragraph at lines 8--16
 
+ []
+
+) (struct_8h.tex
+Underfull \hbox (badness 10000) in paragraph at lines 8--12
+
+ []
+
+[14]) (struct_8h_source.tex) [15] [16
+
+] (refman.ind
+Overfull \hbox (48.6868pt too wide) in paragraph at lines 3--5
+[]\T1/phv/m/n/10 C:/Users/Ryzen/Desktop/Projekty/Courier_cpp/Courier/features.c
+pp,
+ []
+
+
+Overfull \hbox (39.18292pt too wide) in paragraph at lines 5--7
+[]\T1/phv/m/n/10 C:/Users/Ryzen/Desktop/Projekty/Courier_cpp/Courier/features.h
+,
+ []
+
+
+Overfull \hbox (36.07802pt too wide) in paragraph at lines 7--9
+[]\T1/phv/m/n/10 C:/Users/Ryzen/Desktop/Projekty/Courier_cpp/Courier/main.cpp,
+ []
+
+
+Overfull \hbox (29.21094pt too wide) in paragraph at lines 9--11
+[]\T1/phv/m/n/10 C:/Users/Ryzen/Desktop/Projekty/Courier_cpp/Courier/struct.h,
+ []
+
+[17
 
 
 
 ]) (refman.aux)
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 8F0D711B1F1672D033844FF386DAE318;6561.
+(rerunfilecheck)             Checksum: B0575EEBDEF958C4BCA2FEF8500164FE;6665.
  ) 
 Here is how much of TeX's memory you used:
- 18278 strings out of 475385
- 294968 string characters out of 2789102
- 660474 words of memory out of 3000000
- 38979 multiletter control sequences out of 15000+600000
- 525009 words of font info for 96 fonts, out of 8000000 for 9000
+ 18041 strings out of 475385
+ 288999 string characters out of 2789102
+ 656088 words of memory out of 3000000
+ 38968 multiletter control sequences out of 15000+600000
+ 524697 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,15n,117p,474b,744s stack positions out of 10000i,1000n,20000p,200000b,80000s
-
-pdfTeX warning (dest): name{features_8cpp_a9397a43c038cf5c0450b0fd73f01af63} ha
-s been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{features_8cpp_a6ecbb046af671a80e7269ee7a8ce931b} ha
-s been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{features_8cpp_a1bcf93ef20eb0314db1a888f324b60c3} ha
-s been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{features_8cpp_aea37dcd9b14ed94e11c268b0e1b3a9ab} ha
-s been referenced but does not exist, replaced by a fixed one
-
-{D:/Programy/MiKTEX/fonts/enc/dvips/base/8r.enc}<D:/Programy/MiKTEX/fonts/type1
-/public/amsfonts/cm/cmmi10.pfb><D:/Programy/MiKTEX/fonts/type1/public/amsfonts/
-cm/cmmi7.pfb><D:/Programy/MiKTEX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/P
-rogramy/MiKTEX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Programy/MiKTEX/fo
-nts/type1/public/amsfonts/cm/cmsy7.pfb><D:/Programy/MiKTEX/fonts/type1/public/a
-msfonts/cm/cmsy8.pfb><D:/Programy/MiKTEX/fonts/type1/urw/courier/ucrr8a.pfb><D:
-/Programy/MiKTEX/fonts/type1/urw/courier/ucrro8a.pfb><D:/Programy/MiKTEX/fonts/
-type1/urw/helvetic/uhvb8a.pfb><D:/Programy/MiKTEX/fonts/type1/urw/helvetic/uhvb
-8ac.pfb><D:/Programy/MiKTEX/fonts/type1/urw/helvetic/uhvr8a.pfb><D:/Programy/Mi
-KTEX/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (23 pages, 246403 bytes).
+ 99i,15n,117p,766b,740s stack positions out of 10000i,1000n,20000p,200000b,80000s
+{D:/Programy/MiKTEX/fonts/enc/dvips/base/8r.enc}<D:/Programy/MiKTEX/fonts/typ
+e1/public/amsfonts/cm/cmmi10.pfb><D:/Programy/MiKTEX/fonts/type1/public/amsfont
+s/cm/cmmi7.pfb><D:/Programy/MiKTEX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:
+/Programy/MiKTEX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Programy/MiKTEX/
+fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/Programy/MiKTEX/fonts/type1/public
+/amsfonts/cm/cmsy8.pfb><D:/Programy/MiKTEX/fonts/type1/urw/courier/ucrr8a.pfb><
+D:/Programy/MiKTEX/fonts/type1/urw/courier/ucrro8a.pfb><D:/Programy/MiKTEX/font
+s/type1/urw/helvetic/uhvb8a.pfb><D:/Programy/MiKTEX/fonts/type1/urw/helvetic/uh
+vb8ac.pfb><D:/Programy/MiKTEX/fonts/type1/urw/helvetic/uhvr8a.pfb><D:/Programy/
+MiKTEX/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on refman.pdf (21 pages, 190681 bytes).
 PDF statistics:
- 828 PDF objects out of 1000 (max. 8388607)
- 314 named destinations out of 1000 (max. 500000)
- 321 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 450 PDF objects out of 1000 (max. 8388607)
+ 94 named destinations out of 1000 (max. 500000)
+ 265 words of extra memory for PDF output out of 10000 (max. 10000000)
 

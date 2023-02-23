@@ -24,7 +24,7 @@
   <td id="projectalign">
    <div id="projectname">Courier.cpp<span id="projectnumber">&#160;The most recent version</span>
    </div>
-   <div id="projectbrief">The program searches routes from company center to all different cities a given  database</div>
+   <div id="projectbrief">The program used Dijkstra Algorithm to searched the sortest routes from company centre to all different cities from database</div>
   </td>
  </tr>
  </tbody>
@@ -85,17 +85,22 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a11905ca91f1d5f435c9b6f059005648a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvertex.html#a11905ca91f1d5f435c9b6f059005648a">previous</a></td></tr>
-<tr class="separator:a11905ca91f1d5f435c9b6f059005648a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a090b2a702d295e305e0bea6630fb56f8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvertex.html#a090b2a702d295e305e0bea6630fb56f8">distance</a> = <a class="el" href="struct_8h.html#aff3813d1ff60bcd72ba11fb031b4b4c8">max</a></td></tr>
+<tr class="memitem:a090b2a702d295e305e0bea6630fb56f8"><td class="memItemLeft" align="right" valign="top"><a id="a090b2a702d295e305e0bea6630fb56f8" name="a090b2a702d295e305e0bea6630fb56f8"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>distance</b> = std::numeric_limits&lt;double&gt;::max()</td></tr>
 <tr class="separator:a090b2a702d295e305e0bea6630fb56f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63315208caecdcec0db5e2f47a4367e6"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structedge.html">edge</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvertex.html#a63315208caecdcec0db5e2f47a4367e6">neighbors</a></td></tr>
+<tr class="memitem:a11905ca91f1d5f435c9b6f059005648a"><td class="memItemLeft" align="right" valign="top"><a id="a11905ca91f1d5f435c9b6f059005648a" name="a11905ca91f1d5f435c9b6f059005648a"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>previous</b></td></tr>
+<tr class="separator:a11905ca91f1d5f435c9b6f059005648a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63315208caecdcec0db5e2f47a4367e6"><td class="memItemLeft" align="right" valign="top"><a id="a63315208caecdcec0db5e2f47a4367e6" name="a63315208caecdcec0db5e2f47a4367e6"></a>
+std::vector&lt; <a class="el" href="structedge.html">edge</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>neighbors</b></td></tr>
 <tr class="separator:a63315208caecdcec0db5e2f47a4367e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30e88e530b7a98eba97ce4667325f2b1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvertex.html#a30e88e530b7a98eba97ce4667325f2b1">visited</a> = false</td></tr>
+<tr class="memitem:a30e88e530b7a98eba97ce4667325f2b1"><td class="memItemLeft" align="right" valign="top"><a id="a30e88e530b7a98eba97ce4667325f2b1" name="a30e88e530b7a98eba97ce4667325f2b1"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>visited</b> = false</td></tr>
 <tr class="separator:a30e88e530b7a98eba97ce4667325f2b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="params"><dt>Parameters</dt><dd>
+<div class="textblock"><p>The structure include a information about the given city. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">previous</td><td>The earlier city that was determined by the algorithm </td></tr>
     <tr><td class="paramname">distance</td><td>Dictance from the given city to the center. </td></tr>
@@ -104,75 +109,8 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="struct_8h_source.html#l00036">36</a> of file <a class="el" href="struct_8h_source.html">struct.h</a>.</p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a090b2a702d295e305e0bea6630fb56f8" name="a090b2a702d295e305e0bea6630fb56f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a090b2a702d295e305e0bea6630fb56f8">&#9670;&#160;</a></span>distance</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double vertex::distance = <a class="el" href="struct_8h.html#aff3813d1ff60bcd72ba11fb031b4b4c8">max</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="struct_8h_source.html#l00039">39</a> of file <a class="el" href="struct_8h_source.html">struct.h</a>.</p>
-
-</div>
-</div>
-<a id="a63315208caecdcec0db5e2f47a4367e6" name="a63315208caecdcec0db5e2f47a4367e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63315208caecdcec0db5e2f47a4367e6">&#9670;&#160;</a></span>neighbors</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="structedge.html">edge</a>&gt; vertex::neighbors</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="struct_8h_source.html#l00040">40</a> of file <a class="el" href="struct_8h_source.html">struct.h</a>.</p>
-
-</div>
-</div>
-<a id="a11905ca91f1d5f435c9b6f059005648a" name="a11905ca91f1d5f435c9b6f059005648a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11905ca91f1d5f435c9b6f059005648a">&#9670;&#160;</a></span>previous</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string vertex::previous</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="struct_8h_source.html#l00038">38</a> of file <a class="el" href="struct_8h_source.html">struct.h</a>.</p>
-
-</div>
-</div>
-<a id="a30e88e530b7a98eba97ce4667325f2b1" name="a30e88e530b7a98eba97ce4667325f2b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30e88e530b7a98eba97ce4667325f2b1">&#9670;&#160;</a></span>visited</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool vertex::visited = false</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="struct_8h_source.html#l00041">41</a> of file <a class="el" href="struct_8h_source.html">struct.h</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li><a class="el" href="struct_8h_source.html">struct.h</a></li>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<li>C:/Users/Ryzen/Desktop/Projekty/Courier_cpp/Courier/<a class="el" href="struct_8h_source.html">struct.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

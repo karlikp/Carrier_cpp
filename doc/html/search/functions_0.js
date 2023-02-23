@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dijkstra_0',['Dijkstra',['../features_8cpp.html#a6ecbb046af671a80e7269ee7a8ce931b',1,'Dijkstra(std::unordered_map&lt; std::string, vertex &gt; &amp;cities, std::vector&lt; std::string &gt; &amp;unavailable):&#160;features.cpp'],['../features_8h.html#a6ecbb046af671a80e7269ee7a8ce931b',1,'Dijkstra(std::unordered_map&lt; std::string, vertex &gt; &amp;cities, std::vector&lt; std::string &gt; &amp;unavailable):&#160;features.cpp']]]
+  ['dijkstra_0',['Dijkstra',['../features_8cpp.html#ae70f8182962bc5aaaede8631ff9f0470',1,'Dijkstra(std::unordered_map&lt; std::string, vertex &gt; &amp;graph, std::string &amp;centre, std::vector&lt; std::string &gt; &amp;unavailable):&#160;features.cpp'],['../features_8h.html#ae70f8182962bc5aaaede8631ff9f0470',1,'Dijkstra(std::unordered_map&lt; std::string, vertex &gt; &amp;graph, std::string &amp;centre, std::vector&lt; std::string &gt; &amp;unavailable):&#160;features.cpp']]]
 ];

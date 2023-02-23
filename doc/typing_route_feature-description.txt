@@ -1,0 +1,8 @@
+The feature sorts the cities and previous citis, then the feature saves the program result to the new create file. 
+* 
+* 1) A queue is created, then next city and previous cities are saved to the first position the queue until the center is saved;\n
+* 2) Then, Route from the center, through previous cities and finished on the last city (saved in the variable "i"),
+*	 the distence information is saved in the end;\ 
+* 3) The points from 1 to 2 are performed for each city from the unordered map;\n
+* 4) All cities which haven't got conected with the center are saved type in to the file with a short information (about not connected);\n
+* 5) The file is closed.\n

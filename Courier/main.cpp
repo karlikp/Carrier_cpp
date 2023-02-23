@@ -11,17 +11,16 @@
 /**
 *	\mainpage Introduction
 *   
-*	<strong>This program create route file from a central city to all other cities. 
-	If the params aren't complete, the program will show an information about lacking params</strong>
+*	<strong>This program create a file with routes between company centre to all other cities. </strong>
 * 
 *	@section Manual
 *	1) Download all files from my repository called Courier_cpp on the GitHub;\n
 *	2) Launch command prompt; \n
 *	3) Use command 'cd' and go to files "Courier_cpp",  "Courier", "x64", "Debug"; \n
-*	4) Then type in arguments from point at the number 5.
-*	   (Remember that instead input.txt" type in data file name; \n
-*	5) Courier.exe -i input.txt -o output.txt; \n
-*	6) Choose a city where should the centre be.
+*	4) Then type in arguments from point at the number 5.; \n
+*	5) Courier.exe -i input.txt -o output.txt -c centre;
+*	(Remember that instead input.txt, output.txt and centre type in proper params)\n
+*	For examples: Courier.exe -i data_file.txt -o answer_file.txt -c Poznan
 * 
 *   @author <strong>Karol Pitera</strong>
 *	@date <strong>23.02.2023</strong>
@@ -40,7 +39,6 @@ int main(int argc, char* argv[]) {
  
 	service_cmd(input, output, centre, argc, argv);
 	
-	std::cout << centre;
 
 	if (input.empty() || output.empty()) {
 		std::cout << "no parameters" << std::endl;
@@ -50,7 +48,7 @@ int main(int argc, char* argv[]) {
 	else {
 		std::unordered_map <std::string, vertex> graph;  
 		std::vector <std::string> unavailable; 
-		std::string centre;
+		
 
 		read_data(graph, input);
 
@@ -83,6 +81,6 @@ int main(int argc, char* argv[]) {
 
 		Dijkstra(graph, centre, unavailable);	
 
-		typing_route(graph, centre, unavailable, output); 
+		typing_result(graph, centre, unavailable, output); 
 	}
 }

@@ -9,21 +9,19 @@
 #include "struct.h"
 
 /**
-*@file features.cpp complete features file (header, and feature body).
+*@file features.cpp complete features file
 * 
 */
 
 /**
-* Feature assign a proper params to variables input and output.
-* 
-* Param "-i" inform the feature that a next argument will be assign to the variable "input".
-* The program will do similar with a param "-o", and the variable "output".
+* Feature assign a proper params to variables input, output and centre.
 * 
 * @param input the variable includes a input file name with data
-* @param output the variable includes output file name with a program result 
+* @param output the variable includes output file name with a program result
+* @param centre The varaible includes name of central city
 */
 
-void service_cmd(std::string& input, std::string& output, std::string& centre, int argc, char* argv[]) {
+void service_cmd(std::string & input, std::string & output, std::string & centre, int argc, char* argv[]) {
 	for (int i = 0; argc > i; i++)
 	{
 		if (strcmp(argv[i], "-i") == 0) {
@@ -39,16 +37,14 @@ void service_cmd(std::string& input, std::string& output, std::string& centre, i
 }
 
 /**
-* Feature reads a data from a data file and writes it to the unordered map.
+* Feature reads a information from a data file and save the data to the map.
 * 
-* First, Data are saved to proper structures \n
-* If the structures don't exist then the feature creates them.\n
-* Second, Structures are saved to the unordered map.
+* The map includes structures with information about cities. 
 * 
-* @param cities unordered map, include structures with a information about cities from the database
+* @param graph unordered map, which is indexed with city names.
 * @param input the variable includes a file name with input data.
 */
-void read_data(std::unordered_map <std::string, vertex> & cities, std::string input) {
+void read_data(std::unordered_map <std::string, vertex> & graph, std::string input) {
 
 	std::ifstream plik(input);  
 	std::string m1, m2;
@@ -59,35 +55,19 @@ void read_data(std::unordered_map <std::string, vertex> & cities, std::string in
 		while (not plik.eof())		
 		{
 			plik >> m1 >> m2 >> distance;
-			cities[m1].neighbors.push_back({distance, m2});		
-			cities[m2].neighbors.push_back({ distance, m1 });	
+			graph[m1].neighbors.push_back({distance, m2});		
+			graph[m2].neighbors.push_back({ distance, m1 });	
 
 		}
 	}
 }
 /**
-* The feature executes the Dijkstra algorithm
-*  
-*  Good to know, that at the beginning of the program:
+* The feature searches the shortest routes from the central city to all different cities.
 * 
-*  - The city which was choosen the center is assigned the value zero.
-*	 Whereas all other cities is assigned the distance variable equal to a maximal posible value;
-*  - Every city includes a bool value equal to "false" in the structure variable called "visited",
-*	 (The value "false" means that given city hasn't been visited by algorithm .\n\n
-* 
-* The algorithm executuion:\n
-*
-* 1) The closest unvisited city (from center) is serached and saved to a variable called "current";\n
-* 2) The routes from center to all other cities are cheacked,
-*	 If the distance are shorter than current saved way,
-*    the distance is overwritten and city from variable "current" are assigned to structure variable "previaus";\n
-* 3) Then city from the variable "current" is marked as visited, and value true is assigned to variable "visited" of structere given city;\n
-* 4) The points from 1 to 3 are executed as many time as there are saved a cities in the container (unordered_map);\n
-* 5) The unvisited cities are saved in the vector called "unavailable".
-* 
-* @param cities The unordered map, there are saved the cities structures, with information about a given cities. 
+* @param graph unordered map, which is indexed with city names.
 * @param unavailable The cities, which haven't got any route connecting to the center.
 */
+
 void Dijkstra(std::unordered_map <std::string, vertex> & graph, std::string & centre, std::vector <std::string> & unavailable) {
 
 
@@ -124,21 +104,16 @@ void Dijkstra(std::unordered_map <std::string, vertex> & graph, std::string & ce
 		}
 }
 /** 
-* The feature sorts the cities and previous citis, then the feature saves the program result to the new create file. 
+* The feature sorts the cities and previous citis, and saves the program result to the new create file. 
 * 
-* 1) A queue is created, then next city and previous cities are saved to the first position the queue until the center is saved;\n
-* 2) Then, Route from the center, through previous cities and finished on the last city (saved in the variable "i"),
-*	 the distence information is saved in the end;\ 
-* 3) The points from 1 to 2 are performed for each city from the unordered map;\n
-* 4) All cities which haven't got conected with the center are saved type in to the file with a short information (about not connected);\n
-* 5) The file is closed.\n
-*
-* @param cities The unordered map, there are saved the cities structures, with information about a given cities.
-* @param center A city that chose as the center. 
+* When the function finished sort, then all cities visited in one route are typed in the right order with finish distance.
+* 
+* @param graph unordered map, which is indexed with city names.
+* @param centre The varaible includes name of central city
 * @param unavailable The cities, which haven't got any route connecting to the center.
 * @param output the variable includes output file name with a program result 
 */
-void typing_route(std::unordered_map <std::string, vertex> graph, std::string center,
+void typing_result(std::unordered_map <std::string, vertex> graph, std::string center,
 				  std::vector <std::string>& unavailable, std::string output) {
 
 	std::ofstream file(output);

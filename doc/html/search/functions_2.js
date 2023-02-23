@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['read_5fdata_0',['read_data',['../features_8cpp.html#a1bcf93ef20eb0314db1a888f324b60c3',1,'read_data(std::unordered_map&lt; std::string, vertex &gt; &amp;cities, std::string input):&#160;features.cpp'],['../features_8h.html#a1bcf93ef20eb0314db1a888f324b60c3',1,'read_data(std::unordered_map&lt; std::string, vertex &gt; &amp;cities, std::string input):&#160;features.cpp']]]
+  ['service_5fcmd_0',['service_cmd',['../features_8cpp.html#ae7fdb82a8f70ee7468130b9907c53a4b',1,'service_cmd(std::string &amp;input, std::string &amp;output, std::string &amp;centre, int argc, char *argv[]):&#160;features.cpp'],['../features_8h.html#ae7fdb82a8f70ee7468130b9907c53a4b',1,'service_cmd(std::string &amp;input, std::string &amp;output, std::string &amp;centre, int argc, char *argv[]):&#160;features.cpp']]]
 ];

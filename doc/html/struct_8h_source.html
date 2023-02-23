@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Courier.cpp: struct.h Source File</title>
+<title>Courier.cpp: C:/Users/Ryzen/Desktop/Projekty/Courier_cpp/Courier/struct.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,7 +24,7 @@
   <td id="projectalign">
    <div id="projectname">Courier.cpp<span id="projectnumber">&#160;The most recent version</span>
    </div>
-   <div id="projectbrief">The program searches routes from company center to all different cities a given  database</div>
+   <div id="projectbrief">The program used Dijkstra Algorithm to searched the sortest routes from company centre to all different cities from database</div>
   </td>
  </tr>
  </tbody>
@@ -85,31 +85,21 @@ $(function() {
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="struct_8h.html#aff3813d1ff60bcd72ba11fb031b4b4c8">   13</a></span><span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code hl_variable" href="struct_8h.html#aff3813d1ff60bcd72ba11fb031b4b4c8">max</a> = std::numeric_limits&lt;double&gt;::max();</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structedge.html">   22</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structedge.html">edge</a> {           </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structedge.html#a1e4fb76749ce6191b093787cc20e161b">   23</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="structedge.html#a1e4fb76749ce6191b093787cc20e161b">range</a>;           </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structedge.html#aa4aa76cfa9b4879ff3e7eaf38dd3d274">   24</a></span>    std::string <a class="code hl_variable" href="structedge.html#aa4aa76cfa9b4879ff3e7eaf38dd3d274">end</a>;        </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>};</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structvertex.html">   36</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structvertex.html">vertex</a> {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="structvertex.html#a11905ca91f1d5f435c9b6f059005648a">   38</a></span>    std::string <a class="code hl_variable" href="structvertex.html#a11905ca91f1d5f435c9b6f059005648a">previous</a>;   </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="structvertex.html#a090b2a702d295e305e0bea6630fb56f8">   39</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="structvertex.html#a090b2a702d295e305e0bea6630fb56f8">distance</a> = <a class="code hl_variable" href="struct_8h.html#aff3813d1ff60bcd72ba11fb031b4b4c8">max</a>; </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="structvertex.html#a63315208caecdcec0db5e2f47a4367e6">   40</a></span>    std::vector &lt;edge&gt; <a class="code hl_variable" href="structvertex.html#a63315208caecdcec0db5e2f47a4367e6">neighbors</a>;  </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="structvertex.html#a30e88e530b7a98eba97ce4667325f2b1">   41</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structvertex.html#a30e88e530b7a98eba97ce4667325f2b1">visited</a> = <span class="keyword">false</span>; </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>};</div>
-<div class="ttc" id="astruct_8h_html_aff3813d1ff60bcd72ba11fb031b4b4c8"><div class="ttname"><a href="struct_8h.html#aff3813d1ff60bcd72ba11fb031b4b4c8">max</a></div><div class="ttdeci">const double max</div><div class="ttdef"><b>Definition:</b> <a href="struct_8h_source.html#l00013">struct.h:13</a></div></div>
-<div class="ttc" id="astructedge_html"><div class="ttname"><a href="structedge.html">edge</a></div><div class="ttdoc">The scructure includes a information about a given neighbouring city.</div><div class="ttdef"><b>Definition:</b> <a href="struct_8h_source.html#l00022">struct.h:22</a></div></div>
-<div class="ttc" id="astructedge_html_a1e4fb76749ce6191b093787cc20e161b"><div class="ttname"><a href="structedge.html#a1e4fb76749ce6191b093787cc20e161b">edge::range</a></div><div class="ttdeci">double range</div><div class="ttdef"><b>Definition:</b> <a href="struct_8h_source.html#l00023">struct.h:23</a></div></div>
-<div class="ttc" id="astructedge_html_aa4aa76cfa9b4879ff3e7eaf38dd3d274"><div class="ttname"><a href="structedge.html#aa4aa76cfa9b4879ff3e7eaf38dd3d274">edge::end</a></div><div class="ttdeci">std::string end</div><div class="ttdef"><b>Definition:</b> <a href="struct_8h_source.html#l00024">struct.h:24</a></div></div>
-<div class="ttc" id="astructvertex_html"><div class="ttname"><a href="structvertex.html">vertex</a></div><div class="ttdoc">The structure include a information about the given city.</div><div class="ttdef"><b>Definition:</b> <a href="struct_8h_source.html#l00036">struct.h:36</a></div></div>
-<div class="ttc" id="astructvertex_html_a090b2a702d295e305e0bea6630fb56f8"><div class="ttname"><a href="structvertex.html#a090b2a702d295e305e0bea6630fb56f8">vertex::distance</a></div><div class="ttdeci">double distance</div><div class="ttdef"><b>Definition:</b> <a href="struct_8h_source.html#l00039">struct.h:39</a></div></div>
-<div class="ttc" id="astructvertex_html_a11905ca91f1d5f435c9b6f059005648a"><div class="ttname"><a href="structvertex.html#a11905ca91f1d5f435c9b6f059005648a">vertex::previous</a></div><div class="ttdeci">std::string previous</div><div class="ttdef"><b>Definition:</b> <a href="struct_8h_source.html#l00038">struct.h:38</a></div></div>
-<div class="ttc" id="astructvertex_html_a30e88e530b7a98eba97ce4667325f2b1"><div class="ttname"><a href="structvertex.html#a30e88e530b7a98eba97ce4667325f2b1">vertex::visited</a></div><div class="ttdeci">bool visited</div><div class="ttdef"><b>Definition:</b> <a href="struct_8h_source.html#l00041">struct.h:41</a></div></div>
-<div class="ttc" id="astructvertex_html_a63315208caecdcec0db5e2f47a4367e6"><div class="ttname"><a href="structvertex.html#a63315208caecdcec0db5e2f47a4367e6">vertex::neighbors</a></div><div class="ttdeci">std::vector&lt; edge &gt; neighbors</div><div class="ttdef"><b>Definition:</b> <a href="struct_8h_source.html#l00040">struct.h:40</a></div></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structedge.html">   19</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structedge.html">edge</a> {           </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">double</span> range;           </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    std::string end;        </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>};</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structvertex.html">   33</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structvertex.html">vertex</a> {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">double</span> distance = std::numeric_limits&lt;double&gt;::max();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    std::string previous; ;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    std::vector &lt;edge&gt; neighbors;  </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">bool</span> visited = <span class="keyword">false</span>; </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>};</div>
+<div class="ttc" id="astructedge_html"><div class="ttname"><a href="structedge.html">edge</a></div><div class="ttdoc">The scructure includes a information about a given neighbouring city.</div><div class="ttdef"><b>Definition:</b> struct.h:19</div></div>
+<div class="ttc" id="astructvertex_html"><div class="ttname"><a href="structvertex.html">vertex</a></div><div class="ttdoc">The structure include a information about the given city.</div><div class="ttdef"><b>Definition:</b> struct.h:33</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
