@@ -1,17 +1,11 @@
-#include <iostream>
-#include <cmath>      
 #include <vector>
 #include <unordered_map>
 #include <fstream>
 #include <deque>
+#include <cstring>
 
 #include "features.h"
 #include "struct.h"
-
-/**
-*@file features.cpp complete features file
-* 
-*/
 
 /**
 * Feature assign a proper params to variables input, output and centre.
@@ -39,7 +33,7 @@ void service_cmd(std::string & input, std::string & output, std::string & centre
 /**
 * Feature reads a information from a data file and save the data to the map.
 * 
-* The map includes structures with information about cities. 
+* The unordered_map includes structures with information about cities. 
 * 
 * @param graph unordered map, which is indexed with city names.
 * @param input the variable includes a file name with input data.
@@ -64,7 +58,6 @@ void read_data(std::unordered_map <std::string, vertex> & graph, std::string inp
 /**
 * The feature searches the shortest routes from the central city to all different cities.
 * 
-* @param graph unordered map, which is indexed with city names.
 * @param unavailable The cities, which haven't got any route connecting to the center.
 */
 
@@ -103,16 +96,8 @@ void Dijkstra(std::unordered_map <std::string, vertex> & graph, std::string & ce
 			}
 		}
 }
-/** 
-* The feature sorts the cities and previous citis, and saves the program result to the new create file. 
-* 
-* When the function finished sort, then all cities visited in one route are typed in the right order with finish distance.
-* 
-* @param graph unordered map, which is indexed with city names.
-* @param centre The varaible includes name of central city
-* @param unavailable The cities, which haven't got any route connecting to the center.
-* @param output the variable includes output file name with a program result 
-*/
+/* The feature sorts the cities and previous citis, and saves the program result to the new create file. */
+
 void typing_result(std::unordered_map <std::string, vertex> graph, std::string center,
 				  std::vector <std::string>& unavailable, std::string output) {
 

@@ -1,0 +1,13 @@
+Szczecin Poznan 260
+Szczecin Koszalin 170
+Poznan Bytom 370
+Poznan Lodz 215
+Lodz Katowice 200
+Bytom Katowice 15
+Bytom Wroclaw 180
+Gliwice Katowice 30
+London Cambrige 95
+London  Manchester 320
+Oxford Manchester 390
+Oxford Cambrige 160
+Oxford London 95

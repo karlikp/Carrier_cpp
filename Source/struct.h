@@ -1,13 +1,9 @@
-#pragma once
+#ifndef STRUCT_H
+#define STRUCT_H
 
-#include <iostream>
 #include <cmath>
 #include <vector>
 #include <unordered_map>
-
-/**
-* @file struct.h Structures file.
-*/
 
 
 /** The scructure includes a information about a given neighbouring city.
@@ -37,3 +33,5 @@ struct vertex {
 	std::vector <edge> neighbors;  
 	bool visited = false; 
 };
+
+#endif

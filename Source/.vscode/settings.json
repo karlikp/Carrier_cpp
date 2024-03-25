@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "cstring": "cpp",
+        "deque": "cpp",
+        "unordered_map": "cpp"
+    }
+}
