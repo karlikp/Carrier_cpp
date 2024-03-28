@@ -1,6 +1,8 @@
 #ifndef FEATURES_H
 #define FEATURES_H
 
+#include <vector>
+#include <string>
 #include <unordered_map>
 
 #include "struct.h"
