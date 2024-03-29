@@ -1,6 +1,5 @@
 # 🚚 Courier  	
-
-This project finds the shortest path between one city and the rest of the cities contained in the file.
+The program finds a path from the selected city (logistics center) to all other cities contained in the text file, as long as there is a connection between them.
 I used Dijkstra's algorithm to solve the shortest path problem.
 
 ### 💬 Context of the project:
@@ -21,7 +20,7 @@ I chose this project because I was interested in how the Google Maps application
 
 Feel free to change the content of the dataset.txt file or change the central city instead of Poznan to test my program ^^
 
-Remember about appropriate data order:<br>
+Remember to place the data in the right order:<br>
 [city1] [city2] [distance1]<br>
 [city2] [city3] [distance2]<br>
 etc.<br>
