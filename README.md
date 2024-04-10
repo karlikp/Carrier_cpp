@@ -28,12 +28,10 @@ etc.<br>
 ### 📷 Galery:
 
 ![pict1](https://github.com/karlikp/Courier/assets/115083597/8d5a4aeb-752e-4e1f-9bdf-80db7963124b)
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  pict.1 Content of dataSet.txt file</p><br>
+<br>pict.1 Content of dataSet.txt file<br><br>
 
 ![pict2](https://github.com/karlikp/Courier/assets/115083597/e7354d03-606c-44a2-80f4-b0bb6ea4c16a)
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  pict.2 Content of output.txt file which are create after program execution</p>
+<br>pict.2 Content of output.txt file which are create after program execution<br><br>
 
 
 
